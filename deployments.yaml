@@ -30,4 +30,4 @@ spec:
       volumes:
       - name: jenkins_home
         persistentVolumeClaim:
-          claimName: jenkins_home
+          claimName: jenkins-home
