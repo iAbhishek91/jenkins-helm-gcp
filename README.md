@@ -8,6 +8,15 @@ This repo demonstrate hosting of jenkins on kubernetes cluster. Its need to be A
 
 Every deploy will create fresh jenkins instance with persistent volume.
 
+For GCP, please execute the below commands in cloud shell. *Helm* and *kubectl* will be pre-installed in containers.
+
+```sh
+# fetch the kubeconfig in cloud shell
+gcloud container clusters get-credentials <cluster-name> --zone <zone-name> --project <project-id>
+```
+
+helm commands below:
+
 ```sh
 ## validate the helm chart
 helm template ./jenkins
