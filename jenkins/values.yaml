@@ -41,5 +41,5 @@ service:
 
 
 persistentVolumeClaim:
-  isExist: true
+  doCreate: false
   name: jenkins-home
