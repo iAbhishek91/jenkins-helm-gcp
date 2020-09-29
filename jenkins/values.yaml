@@ -36,5 +36,8 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+service:
+  type: LoadBalancer
+
 persistentVolumeClaim:
   name: jenkins-home
