@@ -42,11 +42,11 @@ spec:
         - containerPort: 50000
           name: agent
         volumeMounts:
-        - name: jenkins_home
+        - name: jenkins
           mountPath: /var/jenkins_home
   volumeClaimTemplates:
   - metadata:
-      name: jenkins_home
+      name: jenkins
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
