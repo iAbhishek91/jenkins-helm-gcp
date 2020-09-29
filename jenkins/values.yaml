@@ -36,11 +36,5 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: ClusterIP
-  ports:
-    ui: 8080
-    agent: 50000
-
 persistentVolumeClaim:
   name: jenkins-home
