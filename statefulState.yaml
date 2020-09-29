@@ -33,6 +33,8 @@ spec:
         app: jenkins # Pod template's label selector
     spec:
       terminationGracePeriodSeconds: 10
+      securityContext:
+        runAsUser: 1000
       containers:
       - name: jenkins
         image: jenkins/jenkins:2.249.1-lts-centos7
