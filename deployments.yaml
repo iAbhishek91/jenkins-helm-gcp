@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+      - name: jenkins
+        image: jenkins/jenkins:2.249.1-lts-centos7
+        ports:
+        - containerPort: 8080
+          name: ui
+        - containerPort: 50000
+          name: agent
+        volumeMounts:
+        - mountPath: "/var/jenkins_home"
+          name: jenkins_home
+      volumes:
+      - name: jenkins_home
+        persistentVolumeClaim:
+          claimName: jenkins_home
