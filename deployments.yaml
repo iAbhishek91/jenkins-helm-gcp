@@ -26,8 +26,8 @@ spec:
           name: agent
         volumeMounts:
         - mountPath: "/var/jenkins_home"
-          name: jenkins_home
+          name: jenkins-home
       volumes:
-      - name: jenkins_home
+      - name: jenkins-home
         persistentVolumeClaim:
           claimName: jenkins-home
