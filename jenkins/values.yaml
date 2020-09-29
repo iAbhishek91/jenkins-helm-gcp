@@ -39,5 +39,7 @@ securityContext: {}
 service:
   type: LoadBalancer
 
+
 persistentVolumeClaim:
+  isExist: true
   name: jenkins-home
