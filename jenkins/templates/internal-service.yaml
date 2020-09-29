@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: jenkins
-  name: jenkins-internal
+{{ include "jenkins.labels" . | indent 4 }}
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-internal
 spec:
   ports:
   - name: master
@@ -19,5 +19,5 @@ spec:
     protocol: TCP
     targetPort: 9090
   selector:
-    app: jenkins
+{{ include "jenkins.selectorLabels" . | indent 4 }}
   type: ClusterIP
